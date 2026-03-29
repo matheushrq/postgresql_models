@@ -7,7 +7,7 @@ select	distinct
 		city,
 		extract(year from age(current_date, birth_date)) idade,
 		extract(year from age(current_date, hire_date)) tempo_empresa,
-		coalesce(region, 'LON'),
+		coalesce(region, 'LON') region,
 		country
 from	employees
 limit 	10
