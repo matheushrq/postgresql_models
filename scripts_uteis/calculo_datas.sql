@@ -11,3 +11,16 @@
 
 -- 4:
 	SELECT DATE_PART('day', AGE('2024-11-08'::date, '2024-10-25'::date)) AS dias; -- Resultado: 14
+
+-- Formatação de datas
+do $$
+declare
+	data_exp date := '20260228';
+
+	begin
+		select case
+					when extract(day from age(@data_exp)) > 28 and extract(month from age(@data_exp)) = 2
+						then cast(@data_exp as date, format(select @data_exp::date + interval '1 months';))
+					else null
+				end teste
+	end $$

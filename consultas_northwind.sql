@@ -42,7 +42,7 @@ select	distinct
 		to_char(o.order_date, 'DD/MM/YYYY') order_date,
 		to_char(o.required_date, 'DD/MM/YYYY') required_date,
 		to_char(o.shipped_date, 'DD/MM/YYYY') shipped_date,
-		extract(day from age(shipped_date, order_date)) || ' dias' prazo_entrega,
+		extract(day from age(shipped_date, order_date)) || ' dias' prazo_envio,
 		p.product_name,
 		p.unit_price,
 		o.freight,
@@ -59,7 +59,6 @@ select	distinct
 		o.ship_country,
 		od.unit_price,
 		p.quantity_per_unit,
-		p.discontinued,
 		od.quantity,
 		case
 			when od.quantity < 20
