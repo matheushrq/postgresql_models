@@ -101,19 +101,3 @@ from	(
 	group	by 1
 )
 group	by 1;
-
--- bins
-select	123456.789,
-		round(123456.789, 2),
-		round(123456.789, 1),
-		round(123456.789, 0),
-		round(123456.789, -1),
-		round(123456.789, -2)
-
--- log
-select	1,
-		log(1),
-		log(10),
-		log(100),
-		log(1000),
-		log(10000)
